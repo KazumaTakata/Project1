@@ -27,7 +27,7 @@ def generate_input_data():
 
     input_data = np.zeros([LIMIT, int(MIN_DURATION * SAMPLE_RATE)])
     count = 0
-    for filename in glob.glob("VCTK-Corpus/wav48/p225/*.wav"):
+    for filename in glob.glob("/home/mil/takata/dataset/VCTK-Corpus/wav48/p225/*.wav"):
         data = open_input(filename)
         if len(data) / float(SAMPLE_RATE) > MIN_DURATION:
             input_data[count, :] = data[:int(MIN_DURATION * SAMPLE_RATE)]
